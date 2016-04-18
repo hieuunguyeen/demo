@@ -1,6 +1,7 @@
 // Load dependencies
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 // Load configs
 const configDb = require('./config/db');
@@ -12,10 +13,17 @@ const app = express();
 // Connect mongoose to Database
 mongoose.connect(configDb.connectionUrl);
 
+// Express middlewares
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+
+// Routes
+require('./api/session/session.routes')(app);
+
 // Listen to port
 const server = app.listen(configServer.port, () => {
 	var host = server.address().address;
 	var port = server.address().port;
 
-	console.log('Server running at PORT' + port);
+	console.log('Server running at PORT ' + port);
 });

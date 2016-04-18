@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const dataSchema = new schema({
+var EntrySchema = new Schema({
   question : String,
   answer   : String,
   timestamp: {
@@ -9,3 +9,5 @@ const dataSchema = new schema({
     default: Date.now
   }
 });
+
+module.exports = mongoose.model('entry', EntrySchema);
