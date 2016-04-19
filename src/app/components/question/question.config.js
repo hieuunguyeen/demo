@@ -1,5 +1,5 @@
 export const question = {
-  this.question = [
+  this.list = [
     {
       'question': 'Do you have a car?',
       'type': "YN"

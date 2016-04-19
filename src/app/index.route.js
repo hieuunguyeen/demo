@@ -6,7 +6,13 @@ export function routerConfig ($stateProvider, $urlRouterProvider) {
       templateUrl: 'app/main/main.html',
       controller: 'MainController',
       controllerAs: 'main'
+    })
+    .state('yn', {
+      url: '/yn',
+      templateUrl: 'app/components/question-template/yes-no/yesNoPage.html',
+      controller: 'QuestionController',
+      controllerAs: 'questionCtrl'
     });
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/yn');
 }

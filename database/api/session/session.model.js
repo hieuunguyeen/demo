@@ -12,9 +12,12 @@ const SessionSchema = new Schema({
   deviceId : {
     type   : String
   },
-  data: [{
-    type: Schema.ObjectId,
-    ref: 'entry'
+  browser  : {
+
+  },
+  data     : [{
+    type   : Schema.ObjectId,
+    ref    : 'entry'
   }]
 });
 
