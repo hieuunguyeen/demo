@@ -10,6 +10,8 @@ import { QuestionController } from './components/question/question.controller';
 
 // Directives
 import { yesNoTemplate } from './components/question-template/yes-no/yesNoTemplate.directive';
+import { multiAnswerTemplate } from './components/question-template/multiple-answer/multiAnswerTemplate.directive';
+
 // Services
 import { StatisticService } from './components/statistic/statistic.service';
 
@@ -20,4 +22,5 @@ angular.module('demo', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMe
   .controller('MainController', MainController)
   .controller('QuestionController', QuestionController)
   .directive('yesNoTemplate', yesNoTemplate)
+  .directive('multiAnswerTemplate', multiAnswerTemplate)
   .service('StatisticService', StatisticService);

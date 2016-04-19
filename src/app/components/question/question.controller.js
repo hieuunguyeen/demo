@@ -17,14 +17,15 @@ export class QuestionController {
   }
 
   addEntryToQueue(question, answer) {
-    this.sessionQuestions.push({
+    var entry = {
       question: question,
       answer: answer
-    });
-    submitSessionToServer(this.StatisticService, (this.sessionQuestions));
+    }
+    this.sessionQuestions.push(entry);
+    this.$log.log(entry);
   }
-}
 
-function submitSessionToServer(StatisticService, data) {
-  StatisticService.uploadData(data);
+  submitSessionToServer() {
+    this.StatisticService.uploadData(this.sessionQuestions);
+  }
 }

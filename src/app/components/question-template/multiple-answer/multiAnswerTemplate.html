@@ -1,0 +1,10 @@
+<div class="multi">
+    <section class="multi__question">
+        <p>{{questionCtrl.currentEntry.question}}</p>
+    </section>
+    <section class="multi__answer" ng-repeat="item in questionCtrl.currentEntry.answer">
+        <button ng-click="questionCtrl.addEntryToQueue(questionCtrl.currentEntry.question, item)">
+            {{item}}
+        </button>
+    </section>
+</div>

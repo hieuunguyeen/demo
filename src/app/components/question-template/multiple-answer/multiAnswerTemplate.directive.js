@@ -1,10 +1,9 @@
-// export function yesNoTemplate() {
-export function yesNoTemplate() {
+export function multiAnswerTemplate() {
 
   'ngInject';
 
   let directive = {
-    templateUrl: 'app/components/question-template/yes-no/yesNoTemplate.html',
+    templateUrl: 'app/components/question-template/multiple-answer/multiAnswerTemplate.html',
     restrict: 'E',
     controller: 'QuestionController',
     controllerAs: 'questionCtrl',
