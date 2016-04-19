@@ -1,8 +1,9 @@
 <div>
     <section class="question__YN">
-        
+        <p>{{questionCtrl.currentEntry.question}}</p>
     </section>
     <section class="answer__YN">
-
+        <button class="yes" ng-click="questionCtrl.addEntryToQueue(questionCtrl.currentEntry.question, questionCtrl.currentEntry.answer[0])">Yes</button>
+        <button class="no" ng-click="questionCtrl.addEntryToQueue(questionCtrl.currentEntry.question, questionCtrl.currentEntry.answer[1])">No</button>
     </section>
 </div>

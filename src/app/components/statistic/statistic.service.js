@@ -1,4 +1,4 @@
-import { config } from './statistic.config';
+// import { config } from './statistic.config';
 
 export class StatisticService {
   constructor($http, $httpParamSerializer) {
@@ -7,7 +7,8 @@ export class StatisticService {
 
     this.$http = $http;
     this.$httpParamSerializer = $httpParamSerializer;
-    this.apiPath = config.apiPath;
+    // this.apiPath = config.apiPath;
+    this.apiPath = 'http://localhost:8080/api';
   }
 
   uploadData(sessionData) {

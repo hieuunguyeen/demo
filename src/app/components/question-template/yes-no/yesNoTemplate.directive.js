@@ -1,18 +1,19 @@
+// export function yesNoTemplate() {
 export function yesNoTemplate($log) {
 
   'ngInject'
-
   let directive = {
     templateUrl: 'app/components/question-template/yes-no/yesNoTemplate.html',
     restrict: 'E',
-    scope: {
-      question: '=',
-      answer: '='
-    },
     controller: 'QuestionController',
     controllerAs: 'questionCtrl',
-    link: () => {
-      $log.log('Yes/No template');
+    scope: {
+      question: '@',
+      answer: '@'
+    },
+    link: (scope, element, attrs, controller) => {
+      // $log.log(scope.question);
+      controller.setQuestion(scope.question, scope.answer.split('/'));
     }
   }
 

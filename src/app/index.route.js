@@ -14,5 +14,5 @@ export function routerConfig ($stateProvider, $urlRouterProvider) {
       controllerAs: 'questionCtrl'
     });
 
-  $urlRouterProvider.otherwise('/yn');
+  $urlRouterProvider.otherwise('/');
 }

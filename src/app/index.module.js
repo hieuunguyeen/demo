@@ -10,7 +10,6 @@ import { QuestionController } from './components/question/question.controller';
 
 // Directives
 import { yesNoTemplate } from './components/question-template/yes-no/yesNoTemplate.directive';
-
 // Services
 import { StatisticService } from './components/statistic/statistic.service';
 
