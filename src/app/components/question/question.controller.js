@@ -2,9 +2,10 @@ export class QuestionController {
   constructor(StatisticService, $log) {
     'ngInject';
 
-    this.sessionQuestions = [];
     this.StatisticService = StatisticService;
     this.$log = $log;
+
+    this.sessionQuestions = [];
   }
 
   setQuestion(question, answer) {
@@ -20,10 +21,10 @@ export class QuestionController {
       question: question,
       answer: answer
     });
-    this.$log.log(this.sessionQuestions);
+    submitSessionToServer(this.StatisticService, (this.sessionQuestions));
   }
+}
 
-  submitSessionToServer() {
-    this.StatisticService.uploadData(this.sessionQuestions);
-  }
+function submitSessionToServer(StatisticService, data) {
+  StatisticService.uploadData(data);
 }

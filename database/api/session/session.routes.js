@@ -17,10 +17,18 @@ module.exports = function(app) {
    * POST
    */
   app.post(baseUrl + '/session', (req, res) => {
-    var newSession = SessionModel();
-    var entryQueue = req.body; // Get JSON from request
-    console.log('Request length: 'entryQueue.length);
 
+    res.header('Access-Control-Allow-Origin', '*');
+
+    var newSession = SessionModel();
+    var entryQueue = [];
+
+    // Parse req JSON to array of objects
+    for (var i = 0; i < Object.keys(req.body).length; i++) {
+      entryQueue.push(JSON.parse(req.body[i]));
+    }
+
+    // Persist each session entry onto DB
     for (var i = 0; i < entryQueue.length; i++) {
       var newEntry = new EntryModel();
       newEntry.question = entryQueue[i].question;
@@ -34,6 +42,8 @@ module.exports = function(app) {
 
       newSession.data.push(newEntry._id);
     }
+
+    // Persist session onto DB
     newSession.save((err) => {
       if (err) {
         res.send(err);

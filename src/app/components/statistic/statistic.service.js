@@ -1,4 +1,3 @@
-// import { config } from './statistic.config';
 
 export class StatisticService {
   constructor($http, $httpParamSerializer) {
@@ -6,15 +5,14 @@ export class StatisticService {
     'ngInject';
 
     this.$http = $http;
-    this.$httpParamSerializer = $httpParamSerializer;
-    // this.apiPath = config.apiPath;
     this.apiPath = 'http://localhost:8080/api';
+    this.$httpParamSerializer = $httpParamSerializer;
   }
 
   uploadData(sessionData) {
     return this.$http.post(this.apiPath + '/session', this.$httpParamSerializer(sessionData), {
       headers: {
-        'Content-Type' : 'application/json; charset=utf-8'
+        'Content-Type': 'application/x-www-form-urlencoded'
       }
     });
   }

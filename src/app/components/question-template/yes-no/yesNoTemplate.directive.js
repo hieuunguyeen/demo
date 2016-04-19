@@ -1,5 +1,5 @@
 // export function yesNoTemplate() {
-export function yesNoTemplate($log) {
+export function yesNoTemplate() {
 
   'ngInject'
   let directive = {
@@ -12,7 +12,6 @@ export function yesNoTemplate($log) {
       answer: '@'
     },
     link: (scope, element, attrs, controller) => {
-      // $log.log(scope.question);
       controller.setQuestion(scope.question, scope.answer.split('/'));
     }
   }
