@@ -1,13 +1,13 @@
 <div class="YN">
     <section class="YN__question">
-        <p>{{questionCtrl.currentEntry.question}}</p>
+        <p>{{questionCtrl.currentQuestion.question}}</p>
     </section>
     <section class="YN__answer">
-        <button class="yes" ng-click="questionCtrl.addEntryToQueue(questionCtrl.currentEntry.question, questionCtrl.currentEntry.answer[0])">
-            {{questionCtrl.currentEntry.answer[0]}}
+        <button class="yes" ng-click="questionCtrl.addEntryToQueue(questionCtrl.currentQuestion.question, questionCtrl.currentQuestion.answer[0], questionCtrl.currentQuestion.nextQuestionId[0])">
+            {{questionCtrl.currentQuestion.answer[0]}}
         </button>
-        <button class="no" ng-click="questionCtrl.addEntryToQueue(questionCtrl.currentEntry.question, questionCtrl.currentEntry.answer[1])">
-            {{questionCtrl.currentEntry.answer[1]}}
+        <button class="no" ng-click="questionCtrl.addEntryToQueue(questionCtrl.currentQuestion.question, questionCtrl.currentQuestion.answer[1], questionCtrl.currentQuestion.nextQuestionId[1])">
+            {{questionCtrl.currentQuestion.answer[1]}}
         </button>
     </section>
 </div>

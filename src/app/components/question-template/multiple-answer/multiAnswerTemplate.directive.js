@@ -7,12 +7,8 @@ export function multiAnswerTemplate() {
     restrict: 'E',
     controller: 'QuestionController',
     controllerAs: 'questionCtrl',
-    scope: {
-      question: '@',
-      answer: '@'
-    },
     link: (scope, element, attrs, controller) => {
-      controller.setQuestion(scope.question, scope.answer.split('|'));
+      controller.setQuestion(controller.$state.params.questionId);
     }
   }
 

@@ -1,4 +1,3 @@
-// export function yesNoTemplate() {
 export function yesNoTemplate() {
 
   'ngInject';
@@ -8,12 +7,8 @@ export function yesNoTemplate() {
     restrict: 'E',
     controller: 'QuestionController',
     controllerAs: 'questionCtrl',
-    scope: {
-      question: '@',
-      answer: '@'
-    },
     link: (scope, element, attrs, controller) => {
-      controller.setQuestion(scope.question, scope.answer.split('|'));
+      controller.setQuestion(controller.$state.params.questionId);
     }
   }
 
