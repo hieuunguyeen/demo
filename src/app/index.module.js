@@ -15,7 +15,7 @@ import { multiAnswerTemplate } from './components/question-template/multiple-ans
 // Services
 import { StatisticService } from './components/statistic/statistic.service';
 
-angular.module('demo', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ui.router'])
+angular.module('demo', ['ngAnimate', 'ngCookies', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ui.router', 'ngMaterial'])
   .config(config)
   .config(routerConfig)
   .run(runBlock)

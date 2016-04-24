@@ -1,13 +1,19 @@
 <div class="YN">
-    <section class="YN__question">
-        <p>{{questionCtrl.currentQuestion.question}}</p>
-    </section>
-    <section class="YN__answer">
-        <button class="yes" ng-click="questionCtrl.addEntryToQueue(questionCtrl.currentQuestion.question, questionCtrl.currentQuestion.answer[0], questionCtrl.currentQuestion.nextQuestionId[0])">
-            {{questionCtrl.currentQuestion.answer[0]}}
-        </button>
-        <button class="no" ng-click="questionCtrl.addEntryToQueue(questionCtrl.currentQuestion.question, questionCtrl.currentQuestion.answer[1], questionCtrl.currentQuestion.nextQuestionId[1])">
-            {{questionCtrl.currentQuestion.answer[1]}}
-        </button>
-    </section>
+    <md-card class="position__screen-middle">
+        <md-card-header>
+            <md-card-header-text>
+                <md-title>
+                    <h1>{{questionCtrl.currentQuestion.question}}</h1>
+                </md-title>
+            </md-card-header-text>
+        </md-card-header>
+        <md-card-actions layout="row" layout-align="center center">
+            <md-button class="md-raised md-primary" ng-click="questionCtrl.addEntryToQueue(questionCtrl.currentQuestion.question, questionCtrl.currentQuestion.answer[0], questionCtrl.currentQuestion.nextQuestionId[0])">
+                {{questionCtrl.currentQuestion.answer[0]}}
+            </md-button>
+            <md-button class="md-raised md-warn" ng-click="questionCtrl.addEntryToQueue(questionCtrl.currentQuestion.question, questionCtrl.currentQuestion.answer[1], questionCtrl.currentQuestion.nextQuestionId[1])">
+                {{questionCtrl.currentQuestion.answer[1]}}
+            </md-button>
+        </md-card-actions>
+    </md-card>
 </div>
