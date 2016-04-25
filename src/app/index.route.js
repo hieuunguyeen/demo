@@ -25,6 +25,11 @@ export function routerConfig($stateProvider, $urlRouterProvider, $locationProvid
             url: '/multi/{questionId}',
             parent: 'question',
             template: '<multi-answer-template />'
+        })
+        .state('question.map', {
+            url: '/map/{questionId}',
+            parent: 'question',
+            template: '<map-template />'
         });
 
     $locationProvider.html5Mode(true);

@@ -1,5 +1,5 @@
 export class StatisticService {
-    constructor($http, $httpParamSerializer) {
+    constructor($http, $httpParamSerializer, $log) {
 
         'ngInject';
 
@@ -7,6 +7,7 @@ export class StatisticService {
         this.$http = $http;
         this.apiPath = 'http://146.185.138.86:8080/api';
         this.$httpParamSerializer = $httpParamSerializer;
+        this.$log = $log;
 
         // Props
         this.sessionQueue = [];
@@ -14,7 +15,7 @@ export class StatisticService {
 
     queueEntry(entry) {
         this.sessionQueue.push(entry);
-        console.log(this.sessionQueue);
+        this.$log.log(this.sessionQueue);
     }
 
     uploadData() {

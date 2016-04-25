@@ -59,21 +59,27 @@ export class QuestionController {
 
 // Question list
 const questionList = [{
-    'id': '0',
-    'question': 'Do you have a car?',
-    'answer': 'Yes/No',
-    'type': 'yn',
+    'id'            : '0',
+    'question'      : 'Do you have a car?',
+    'answer'        : 'Yes/No',
+    'type'          : 'yn',
     'nextQuestionId': '1/2'
 }, {
-    'id': '1',
-    'question': 'Do you want to get rid of your car?',
-    'answer': 'Yes/No',
-    'type': 'yn',
+    'id'            : '1',
+    'question'      : 'Do you want to get rid of your car?',
+    'answer'        : 'Yes/No',
+    'type'          : 'yn',
     'nextQuestionId': '0/2'
 }, {
-    'id': '2',
-    'question': 'Where do you live?',
-    'answer': 'Helsinki/Espoo/Vantaa/Sipoo',
-    'type': 'multi',
+    'id'            : '2',
+    'question'      : 'Where do you live?',
+    'answer'        : 'Helsinki/Espoo/Vantaa/Sipoo',
+    'type'          : 'multi',
     'nextQuestionId': '0/1/1/1'
+}, {
+    'id'            : '3',
+    'question'      : 'Choose on map your living location',
+    'answer'        : '',
+    'type'          : 'map',
+    'nextQuestionId': '0'
 }];

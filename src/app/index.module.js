@@ -11,9 +11,11 @@ import { QuestionController } from './components/question/question.controller';
 // Directives
 import { yesNoTemplate } from './components/question-template/yes-no/yesNoTemplate.directive';
 import { multiAnswerTemplate } from './components/question-template/multiple-answer/multiAnswerTemplate.directive';
+import { mapTemplate } from './components/question-template/map/mapTemplate.directive';
 
 // Services
 import { StatisticService } from './components/statistic/statistic.service';
+import { MapService } from './components/question-template/map/map.service';
 
 angular.module('demo', ['ngAnimate', 'ngCookies', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ui.router', 'ngMaterial'])
   .config(config)
@@ -23,4 +25,6 @@ angular.module('demo', ['ngAnimate', 'ngCookies', 'ngSanitize', 'ngMessages', 'n
   .controller('QuestionController', QuestionController)
   .directive('yesNoTemplate', yesNoTemplate)
   .directive('multiAnswerTemplate', multiAnswerTemplate)
-  .service('StatisticService', StatisticService);
+  .directive('mapTemplate', mapTemplate)
+  .service('StatisticService', StatisticService)
+  .service('MapService', MapService);
