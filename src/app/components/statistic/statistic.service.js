@@ -5,7 +5,7 @@ export class StatisticService {
 
         // Injection
         this.$http = $http;
-        this.apiPath = 'http://localhost:8080/api';
+        this.apiPath = 'http://146.185.138.86:8080/api';
         this.$httpParamSerializer = $httpParamSerializer;
 
         // Props
@@ -14,6 +14,7 @@ export class StatisticService {
 
     queueEntry(entry) {
         this.sessionQueue.push(entry);
+        console.log(this.sessionQueue);
     }
 
     uploadData() {
