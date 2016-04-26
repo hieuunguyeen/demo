@@ -23,9 +23,6 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.position__bottom {
-
-}
 
 md-card {
     width: 90%;
@@ -41,9 +38,16 @@ md-card {
         }
     }
 
+    &-header {
+        height: 30%;
+    }
+
+    &-content {
+        height: 40%;
+    }
+
     &-actions {
         margin:0;
-        width: 100%;
         height: 30%;
         position: absolute;
         bottom: 0;

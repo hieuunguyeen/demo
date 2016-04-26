@@ -12,6 +12,7 @@ import { QuestionController } from './components/question/question.controller';
 import { yesNoTemplate } from './components/question-template/yes-no/yesNoTemplate.directive';
 import { multiAnswerTemplate } from './components/question-template/multiple-answer/multiAnswerTemplate.directive';
 import { mapTemplate } from './components/question-template/map/mapTemplate.directive';
+import { checkboxTemplate } from './components/question-template/checkbox/checkbox.directive';
 
 // Services
 import { StatisticService } from './components/statistic/statistic.service';
@@ -26,5 +27,6 @@ angular.module('demo', ['ngAnimate', 'ngCookies', 'ngSanitize', 'ngMessages', 'n
   .directive('yesNoTemplate', yesNoTemplate)
   .directive('multiAnswerTemplate', multiAnswerTemplate)
   .directive('mapTemplate', mapTemplate)
+  .directive('checkboxTemplate', checkboxTemplate)
   .service('StatisticService', StatisticService)
   .service('MapService', MapService);

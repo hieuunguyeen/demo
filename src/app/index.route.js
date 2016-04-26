@@ -30,6 +30,11 @@ export function routerConfig($stateProvider, $urlRouterProvider, $locationProvid
             url: '/map/{questionId}',
             parent: 'question',
             template: '<map-template />'
+        })
+        .state('question.checkbox', {
+            url: '/checkbox/{questionId}',
+            parent: 'question',
+            template: '<checkbox-template />'
         });
 
     $locationProvider.html5Mode(true);

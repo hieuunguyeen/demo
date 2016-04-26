@@ -1,0 +1,28 @@
+<div class="checkbox">
+    <md-card class="position__screen-middle">
+        <md-card-header>
+            <md-card-header-text>
+                <md-title>
+                    <h1>{{questionCtrl.currentQuestion.question}}</h1>
+                </md-title>
+            </md-card-header-text>
+        </md-card-header>
+
+        <md-card-content layout="column" layout-align="center center">
+            <!-- <md-checkbox ng-click="questionCtrl.addEntryToQueue(questionCtrl.currentQuestion.question, item, questionCtrl.currentQuestion.nextQuestionId[$index])" ng-repeat="item in questionCtrl.currentQuestion.answer">
+                {{item}}
+            </md-checkbox> -->
+            <div layout="row">
+                <md-checkbox ng-click="questionCtrl.toggleCheckboxAnswer(item)" ng-repeat="item in questionCtrl.currentQuestion.answer" value="{{item}}">
+                    {{item}}
+                </md-checkbox>
+            </div>
+        </md-card-content>
+
+        <md-card-actions layout="column" layout-align="center center" layout-wrap flex>
+            <md-button class="md-raised md-primary" ng-click="questionCtrl.addEntryToQueue(questionCtrl.currentQuestion.question, questionCtrl.currentQuestion.checkboxAnswer, questionCtrl.currentQuestion.nextQuestionId[0])">
+                Submit
+            </md-button>
+        </md-card-actions>
+    </md-card>
+</div>

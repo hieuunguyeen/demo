@@ -16,7 +16,17 @@ export class QuestionController {
             type: questionList[questionId].type,
             question: questionList[questionId].question,
             answer: questionList[questionId].answer.split('/'),
-            nextQuestionId: questionList[questionId].nextQuestionId.split('/')
+            nextQuestionId: questionList[questionId].nextQuestionId.split('/'),
+            checkboxAnswer: []
+        }
+    }
+
+    toggleCheckboxAnswer(item) {
+        var index = this.currentQuestion.checkboxAnswer.indexOf(item);
+        if (index === -1) {
+            this.currentQuestion.checkboxAnswer.push(item)
+        } else {
+            this.currentQuestion.checkboxAnswer.splice(index, 1)
         }
     }
 
@@ -44,12 +54,17 @@ export class QuestionController {
         // route
         switch (this.currentQuestion.type) {
             case 'yn':
-                this.$state.transitionTo("question.yn", {
+                this.$state.transitionTo('question.yn', {
                     questionId: id
                 });
                 break;
             case 'multi':
-                this.$state.transitionTo("question.multi", {
+                this.$state.transitionTo('question.multi', {
+                    questionId: id
+                });
+                break;
+            case 'checkbox':
+                this.$state.transitionTo('question.checkbox', {
                     questionId: id
                 });
                 break;
@@ -75,11 +90,17 @@ const questionList = [{
     'question'      : 'Where do you live?',
     'answer'        : 'Helsinki/Espoo/Vantaa/Sipoo',
     'type'          : 'multi',
-    'nextQuestionId': '0/1/1/1'
+    'nextQuestionId': '0/1/3/4'
 }, {
     'id'            : '3',
     'question'      : 'Choose on map your living location',
     'answer'        : '',
     'type'          : 'map',
+    'nextQuestionId': '4'
+}, {
+    'id'            : '4',
+    'question'      : 'What vehicle(s) do you have?',
+    'answer'        : 'Car/Motorcycle/Bike/Airplane',
+    'type'          : 'checkbox',
     'nextQuestionId': '0'
 }];
