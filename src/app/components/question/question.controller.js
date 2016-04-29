@@ -63,6 +63,11 @@ export class QuestionController {
                     questionId: id
                 });
                 break;
+            case 'map':
+                this.$state.transitionTo('question.map', {
+                    questionId: id
+                });
+                break;
             case 'checkbox':
                 this.$state.transitionTo('question.checkbox', {
                     questionId: id

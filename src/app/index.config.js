@@ -3,4 +3,5 @@ export function config ($logProvider, $mdThemingProvider) {
   // Enable log
   $logProvider.debugEnabled(true);
   $mdThemingProvider.theme('default');
+  // $locationProvider.html5Mode(true);
 }

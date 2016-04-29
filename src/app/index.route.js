@@ -1,7 +1,7 @@
 export function routerConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     'ngInject';
 
-    $urlRouterProvider.otherwise('/question/yn/0');
+    $urlRouterProvider.otherwise('/');
 
     $stateProvider
         .state('home', {
@@ -36,6 +36,4 @@ export function routerConfig($stateProvider, $urlRouterProvider, $locationProvid
             parent: 'question',
             template: '<checkbox-template />'
         });
-
-    $locationProvider.html5Mode(true);
 }

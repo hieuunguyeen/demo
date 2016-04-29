@@ -31,7 +31,7 @@ export function mapTemplate(MapService, $log) {
                             $log.log('Data error')
                         } else {
                             $log.log(success.data.features[0].place_name);
-                            controller.addEntryToQueue(controller.currentQuestion.question, success.data.features[0].place_name, 0);
+                            controller.addEntryToQueue(controller.currentQuestion.question, success.data.features[0].place_name, controller.currentQuestion.nextQuestionId[0]);
                         }
                     }, (err) => {
                         this.$log.log(err.data);
