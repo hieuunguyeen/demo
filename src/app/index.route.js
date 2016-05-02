@@ -1,4 +1,4 @@
-export function routerConfig($stateProvider, $urlRouterProvider, $locationProvider) {
+export function routerConfig($stateProvider, $urlRouterProvider) {
     'ngInject';
 
     $urlRouterProvider.otherwise('/');
@@ -13,7 +13,6 @@ export function routerConfig($stateProvider, $urlRouterProvider, $locationProvid
         .state('question', {
             url: '/question',
             template: '<div ui-view></div>',
-            controller: 'QuestionController',
             controllerAs: 'questionCtrl'
         })
         .state('question.yn', {

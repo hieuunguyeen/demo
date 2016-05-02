@@ -1,13 +1,28 @@
 export class QuestionController {
 
-    constructor(StatisticService, $log, $location, $state, $window) {
+    constructor(StatisticService, $log, $location, $state, $window, $timeout) {
         'ngInject';
+
         // Injection
         this.StatisticService = StatisticService;
         this.$log = $log;
         this.$location = $location;
         this.$state = $state;
         this.$window = $window;
+        this.$timeout = $timeout;
+
+        // Set idie timer
+        this.setIdieTimer();
+
+        // Bind event to reset idie timer
+        angular.element(this.$window).on('mousemove click scroll keypress', () => {
+            this.resetIdieTimer();
+        });
+
+        // Bind event to window refresh
+        angular.element(this.$window).onbeforeunload = (event) => {
+            alert('Are you sure you wanna refresh?' + event);
+        } // Doesn't seem like it's working
     }
 
     setQuestion(questionId) {
@@ -73,6 +88,21 @@ export class QuestionController {
                     questionId: id
                 });
                 break;
+        }
+    }
+
+    setIdieTimer() {
+        this.idieTime = this.$timeout(() => {
+            this.$log.log('Idie detected');
+            this.submitSessionToServer();
+            this.resetIdieTimer();
+        }, 2*60*1000); // 2 mins
+    }
+
+    resetIdieTimer() {
+        if (this.idieTime != null) {
+            this.$timeout.cancel(this.idieTime);
+            this.setIdieTimer();
         }
     }
 }
